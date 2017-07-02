@@ -2,3 +2,5 @@
 #define VERSION_H
 const char *fdkaac_version = "0.6.3";
 #endif
+
+#define VERSION_EDITION "Airlltools"

@@ -107,7 +107,7 @@ static
 void usage(void)
 {
     printf(
-PROGNAME " %s\n"
+PROGNAME " %s (%s)\n"
 "Usage: " PROGNAME " [options] input_file\n"
 "Options:\n"
 " -h, --help                    Print this help message\n"
@@ -200,7 +200,7 @@ PROGNAME " %s\n"
 "                              dotted notation.\n"
 "                              Example:\n"
 "                                --tag-from-json /path/to/json?format.tags\n"
-    , fdkaac_version);
+    , fdkaac_version, VERSION_EDITION);
 }
 
 typedef struct aacenc_param_ex_t {
@@ -594,6 +594,7 @@ void put_tool_tag(m4af_ctx_t *m4af, const aacenc_param_ex_t *params,
     char *p = tool_info;
     LIB_INFO lib_info;
 
+    p += sprintf(p, "%s, ", VERSION_EDITION);
     p += sprintf(p, PROGNAME " %s, ", fdkaac_version);
     aacenc_get_lib_info(&lib_info);
     p += sprintf(p, "libfdk-aac %s, ", lib_info.versionStr);
