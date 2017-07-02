@@ -20,3 +20,6 @@ src/.deps/
 src/.dirstamp
 stamp-h1
 fdkaac
+fdk-aac
+fdkaac.exe
+*.lo
